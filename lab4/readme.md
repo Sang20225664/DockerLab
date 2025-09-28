@@ -53,9 +53,7 @@ echo "<h1>Hello from Bind Mount</h1>" > ~/index.html
 
 2. Chạy nginx container, map port và bind mount file `index.html`
 ```bash
-docker run -d --name nginx-bind -p 8080:80 \
-  -v ~/index.html:/usr/share/nginx/html/index.html \
-  nginx
+docker run -d --name nginx-bind -p 8080:80   -v $(pwd)/index.html:/usr/share/nginx/html/index.html   nginx
 ```
 
 3. Kiểm tra nội dung web trên trình duyệt
