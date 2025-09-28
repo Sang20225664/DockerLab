@@ -104,7 +104,7 @@ A collection of hands-on Docker labs to practice and strengthen containerization
 1. Clone this repo:
 
    ```bash
-   git clone https://github.com/<your-username>/DockerLab.git
+   git clone https://github.com/Sang20225664/DockerLab.git
    cd DockerLab
    ```
 2. Navigate into each lab folder and follow instructions in the `README.md` (if available).
