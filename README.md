@@ -1,80 +1,122 @@
-A Docker Lab for self-studying
+# 🐳 Docker Labs – Self Study
 
-Docker Lab 1:  Write docker command for following instructions 
-	- Check docker version 
-	- Search docker images on Docker Hub 
-	- Pull nginx latest image from Docker Hub 
-	- Show list image on local 
-	- Run docker container in detach mode and mapping to port 8080 of local machine 
-	- Check running containers 
-	- Check all containers (include not running containers) 
-	- Stop a container 
-	- Start a container 
-	- Remote to a running container or run a command in a running container 
-	- Tagging a docker image 
-Then, finish following task: 
-	- Create your own Docker Hub account 
-	- Create repository 
-	- Push nginx image to your repository 
-	- Delete nginx image in your local machine 
-	- Try to pull the nginx image from your repository 
+A collection of hands-on Docker labs to practice and strengthen containerization skills.
 
- 
-Docker Lab 2: Build custom docker images for nginx, tomcat, NodeJS 
+---
 
-Task 1: Build nginx image 
-	- Write Dockerfile to build a nginx image from ubuntu/centos/redhat/oraclelinux/alpine base image 
-	- Create a html file on your local machine and copy to your image 
-	- Push image to your repository 
-	- Run nginx container from your image 
-	- Test curl from your localhost 
+## 📌 Docker Lab 1: Basic Docker Commands
 
-Task 2: Build tomcat image 
-	- Write Dockerfile to build a tomcat image from ubuntu/centos/redhat/oraclelinux/alpine base image 
-	- Push image to your repository 
-	- Run tomcat container from your image 
-	- Test curl from your localhost 
+### Tasks
 
-Task 3: Build NodeJS image 
-	- Write Dockerfile to build a NodeJS image from ubuntu/centos/redhat/oraclelinux/alpine base image 
-	- Push image to your repository 
-	- Run NodeJS container from your image 
-	- Test curl from your localhost 
- 
+* Check Docker version
+* Search images on Docker Hub
+* Pull the latest **nginx** image from Docker Hub
+* List images on local machine
+* Run an nginx container in **detached mode**, mapping to port `8080` on the host
+* Check running containers
+* Check all containers (including stopped ones)
+* Stop a container
+* Start a container
+* Remote into a running container or run a command inside
+* Tag a Docker image
 
-Docker Lab 3: Use docker-compose to deploy a mini full-stack web app 
+### Extra Tasks
 
-Task 1: Install docker-compose 
-	- Install docker-compose following this reference: https://docs.docker.com/compose/install/ 
-	- Test the installation 
-	- Run command docker-compose version to check version of docker-compose 
-	- Run command docker-compose –help to see the cli references 
+* Create a **Docker Hub account**
+* Create a repository on Docker Hub
+* Push nginx image to your repository
+* Delete nginx image from your local machine
+* Pull the nginx image back from your repository
 
-Task 2: docker-compose quick start 
-	- Using Docker Compose to easily run WordPress in an isolated environment built with Docker containers 
-	- References: https://docs.docker.com/samples/wordpress/ 
+---
 
-Task 3: Doing a real project including NodeJS and MySQL using docker-compose 
-	- Create Dockerfile for building NodeJS and MySQL container image 
-	- Create docker-compose file to running NodeJS and mysql service, connect to MySQL service from NodeJS service 
-	- Display web page on your browser 
- 
+## 📌 Docker Lab 2: Build Custom Docker Images
 
-Docker Lab 4: Do following tasks 
+### Task 1: Build Nginx Image
 
-Task 1: Experiment Volume mount 
-	- Create a volume named task1-volume 
-	- Run a nginx container with the volume created in step 1 
-	- The mount point for container in /opt/mount_point/ 
-	- Use docker exec command to log into container, create a file with random content in /opt/mount_point/ 
-	- Run a second nginx container with the same mounting point as the first nginx container 
-	- Use docker exec command to log into the second nginx container, check if the file created before is in /opt/mount_point/ 
+* Write a `Dockerfile` to build an nginx image from **Ubuntu / CentOS / RedHat / OracleLinux / Alpine** base image
+* Create a `html` file locally and copy it to your image
+* Push the custom image to your repository
+* Run a container from your image
+* Test with `curl` from your localhost
 
-Task 2: Experiment Bind mount 
-	- Create an index.html file with the content you preferred 
-	- Run a nginx container map to port 80:80 
-	- Using bind mount to mount a location of your index.html file to /usr/share/nginx/html in the container 
-	- Check if the web content is the content of your html file. 
-	- Try modifying the content of index.html file in the container, check if the content of index.html file in your host also change 
- 
+### Task 2: Build Tomcat Image
 
+* Write a `Dockerfile` to build a tomcat image from **Ubuntu / CentOS / RedHat / OracleLinux / Alpine** base image
+* Push the custom image to your repository
+* Run a container from your image
+* Test with `curl` from your localhost
+
+### Task 3: Build NodeJS Image
+
+* Write a `Dockerfile` to build a NodeJS image from **Ubuntu / CentOS / RedHat / OracleLinux / Alpine** base image
+* Push the custom image to your repository
+* Run a container from your image
+* Test with `curl` from your localhost
+
+---
+
+## 📌 Docker Lab 3: Docker Compose
+
+### Task 1: Install Docker Compose
+
+* Install Docker Compose → [Official docs](https://docs.docker.com/compose/install/)
+* Test installation
+* Run `docker-compose version` to check version
+* Run `docker-compose --help` to see CLI references
+
+### Task 2: Quick Start with WordPress
+
+* Use Docker Compose to easily run **WordPress** in an isolated environment with Docker containers
+* Reference: [WordPress with Docker](https://docs.docker.com/samples/wordpress/)
+
+### Task 3: Real Project – NodeJS + MySQL
+
+* Create `Dockerfile` for NodeJS and MySQL images
+* Create `docker-compose.yml` to run NodeJS + MySQL services
+* Connect NodeJS service to MySQL service
+* Display web page on browser
+
+---
+
+## 📌 Docker Lab 4: Volumes and Mounts
+
+### Task 1: Volume Mount
+
+* Create a volume named `task1-volume`
+* Run an nginx container with the volume mounted at `/opt/mount_point/`
+* Use `docker exec` to log into the container and create a file inside the mount point
+* Run a second nginx container with the same volume mount
+* Use `docker exec` to log into the second container and verify the file exists
+
+### Task 2: Bind Mount
+
+* Create an `index.html` file with custom content
+* Run an nginx container mapped to port `80:80`
+* Use **bind mount** to mount your local `index.html` to `/usr/share/nginx/html` in the container
+* Verify that the web page shows your custom content
+* Modify `index.html` in the container and check if it also updates on the host
+
+---
+
+## 🚀 How to Use
+
+1. Clone this repo:
+
+   ```bash
+   git clone https://github.com/<your-username>/DockerLab.git
+   cd DockerLab
+   ```
+2. Navigate into each lab folder and follow instructions in the `README.md` (if available).
+
+---
+
+## 📚 References
+
+* [Docker Documentation](https://docs.docker.com/)
+* [Docker Hub](https://hub.docker.com/)
+* [Compose Documentation](https://docs.docker.com/compose/)
+
+---
+
+✍️ *Maintained for self-study & practice. Feel free to fork and try out yourself!*
